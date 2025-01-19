@@ -8,7 +8,7 @@ const Home = () => {
       <Navbar />
       <div className="slider-area">
         <div className="slider-active">
-          <div className="single-slider slider-height d-flex align-items-center">
+          <div className="single-slider slider-height d-flex align-items-center" style={{ backgroundImage: `url(/images/hero.jpg)` }}>
             <div className="container">
               <div className="row">
                 <div className="col-xl-6 col-lg-9 col-md-10">
