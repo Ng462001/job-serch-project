@@ -1,0 +1,29 @@
+.single-slider {
+    background-image: url(h1_hero.jpg);
+    height: 89vh;
+    background-size: cover;
+    width: 100%;
+}
+
+.hero__caption h1 {
+    font-family: "Muli", sans-serif;
+    font-size: 80px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: #28395a;
+    line-height: 1.2;
+
+}
+
+@media only screen and (max-width: 768px) {
+    .hero__caption h1 {
+        font-size: 50px;
+        text-align: center;
+
+    }
+
+    .find-job {
+        text-align: center;
+        margin-top: 10px;
+    }
+}

@@ -1,0 +1,67 @@
+.card {
+    height: 180px;
+    width: 90%;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: black;
+}
+
+.img-card {
+    height: 60px;
+    background-size: cover;
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 60px;
+}
+
+.card h4 {
+    letter-spacing: 3px;
+    color: rgb(90, 79, 209);
+    margin-left: 20px !important;
+    margin-top: 10px !important;
+}
+
+.card p {
+    margin-left: 20px !important;
+}
+
+
+.filter-heading {
+    color: rgb(90, 79, 209);
+}
+
+.filters-list {
+    list-style-type: none;
+}
+
+.filter-label {
+    margin-left: 10px !important;
+}
+
+.loader {
+    
+    width: 60px;
+    aspect-ratio: 4;
+    --_g: no-repeat radial-gradient(circle closest-side, #000 90%, #0000);
+    background:
+        var(--_g) 0% 50%,
+        var(--_g) 50% 50%,
+        var(--_g) 100% 50%;
+    background-size: calc(100%/3) 100%;
+    animation: l7 1s infinite linear;
+}
+
+@keyframes l7 {
+    33% {
+        background-size: calc(100%/3) 0%, calc(100%/3) 100%, calc(100%/3) 100%
+    }
+
+    50% {
+        background-size: calc(100%/3) 100%, calc(100%/3) 0%, calc(100%/3) 100%
+    }
+
+    66% {
+        background-size: calc(100%/3) 100%, calc(100%/3) 100%, calc(100%/3) 0%
+    }
+}

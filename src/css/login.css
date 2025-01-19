@@ -1,0 +1,45 @@
+.login-main-cont {
+    width: 100%;
+    height: 100vh;
+}
+
+.login-cont {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-family: "Nunito", sans-serif;
+    padding:20px 30px;
+}
+
+.login form label {
+    margin-left: 10px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 0px;
+}
+
+.btn-login {
+    width: 100%;
+    margin-top: 20px;
+    border: none;
+    background-color: #fb873f;
+    padding: 8px;
+    color: white;
+}
+
+.btn-login:hover {
+    background-color: transparent;
+    color: #fb873f;
+    border: 1px solid #fb873f;
+    transition: 0.5s;
+}
