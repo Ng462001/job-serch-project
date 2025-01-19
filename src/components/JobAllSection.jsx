@@ -21,9 +21,9 @@ const JobAllSection = ({ jobsItem }) => {
 
         <div className="mt-3 d-flex justify-content-between">
           <div>
-            <FaLocationDot className="locationIcon" />
+            <FaLocationDot className="locationIcon text-danger" />
             <span className='fw-bold loction'>{jobsItem.location}</span>
-            <FaBriefcase className="jobTypeIcon" />
+            <FaBriefcase className="jobTypeIcon text-secondary" />
             <span className='fw-bold'>{jobsItem.employment_type}</span>
           </div>
           <h5 className='fw-bolder'>{jobsItem.package_per_annum}</h5>
