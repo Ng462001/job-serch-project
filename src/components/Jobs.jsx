@@ -63,10 +63,10 @@ const Jobs = () => {
       <ScrollToTop />
       <div className="container mt-3">
         <div className="row">
-          <div className="col-4 p-3">
+          <div className="col-12 col-lg-4 col-md-5 p-3">
             <JobSideBar changeEmpType={setValues} values={allValues} />
           </div>
-          <div className="col-8 p-3">
+          <div className="col-12 col-lg-8 col-md-7 p-3">
             <input onKeyUp={getUserIn} type="search" className='form-control w-100 mb-3' placeholder='Please enter you job' />
             {loading ?
               <div className='d-flex justify-content-center align-items-center h-75'>
