@@ -1,5 +1,5 @@
 .single-slider {
-    background-image: url(hero.jpg);
+    background:linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("./hero.jpg");
     height: 89vh;
     background-size: cover;
     width: 100%;
