@@ -4,6 +4,7 @@ import JobSideBar from "./JobSideBar"
 import Navbar from "./Navbar"
 import Cookies from "js-cookie"
 import ScrollToTop from "./ScrollToTop"
+import "../css/jobs.css"
 
 const Jobs = () => {
   const [allValues, setValues] = useState({
@@ -91,7 +92,7 @@ const Jobs = () => {
               emaptyData === 0 ?
                 <div className='d-flex flex-column justify-content-center align-items-center h-75'>
                   <img src="/images/no-jobs-found.png" alt="images" className='w-50' />
-                  <h2 className='text-primary fw-bold'>No Jobs Found</h2>
+                  <h2 className='text-primary fw-bold text'>No Jobs Found</h2>
                 </div>
                 :
                 allValues.jobsArr.map(eachJob => <JobAllSection key={eachJob.id} jobsItem={eachJob} />)

@@ -20,7 +20,7 @@ const Home = () => {
               <div className="row">
                 <div className="col-xl-8">
                   <div className="find-job">
-                    <NavLink to="/jobs" className="btn btn-primary mt-2"> Find Jobs</NavLink>
+                    <NavLink to="/jobs" className="btn btn-primary mt-2" style={{width:"100px"}}> Find Jobs</NavLink>
                   </div>
                 </div>
               </div>

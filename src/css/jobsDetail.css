@@ -1,0 +1,62 @@
+.loader {
+
+    width: 60px;
+    aspect-ratio: 4;
+    --_g: no-repeat radial-gradient(circle closest-side, #000 90%, #0000);
+    background:
+        var(--_g) 0% 50%,
+        var(--_g) 50% 50%,
+        var(--_g) 100% 50%;
+    background-size: calc(100%/3) 100%;
+    animation: l7 1s infinite linear;
+}
+
+@keyframes l7 {
+    33% {
+        background-size: calc(100%/3) 0%, calc(100%/3) 100%, calc(100%/3) 100%
+    }
+
+    50% {
+        background-size: calc(100%/3) 100%, calc(100%/3) 0%, calc(100%/3) 100%
+    }
+
+    66% {
+        background-size: calc(100%/3) 100%, calc(100%/3) 100%, calc(100%/3) 0%
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .jobDetails {
+        width: 100% !important;
+        margin: 0px 10px !important;
+    }
+
+    .jobDetails img {
+        width: 30%;
+        height: auto;
+    }
+
+    .similarJobs {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .similarjobsLink {
+        width: 100% !important;
+    }
+
+}
+
+@media screen and (max-width: 1024px) {
+    .similarJobs {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .similarjobsLink {
+        width: 70% !important;
+    }
+
+}
