@@ -96,10 +96,10 @@ const JobsDetails = () => {
                 <h2 className='fw-bold mt-4 mb-5'>Similar Jobs</h2>
                 <div className=' d-flex flex-wrap gap-5'>
                   {similarJobs.similar_jobs.map((item) => (
-                    <NavLink className='similarjobsLink' to={`/jobs/${item.id}`} style={{ textDecoration: "none", color: "black", width: "40%" }}>
+                    <NavLink className='similarjobsLink' to={`/jobs/${item.id}`} style={{ textDecoration: "none", color: "black", width: "48%" }}>
                       <div key={item.id} style={{ width: "100%" }} className='jobCard p-4 mb-3 bg-dark bg-gradient text-white'>
                         <div className='d-flex'>
-                          <img src={item.company_logo_url} width="25%" />
+                          <img src={item.company_logo_url} width="20%" />
                           <div className='m-4'>
                             <h2 className='jobTitle'>{item.title}</h2>
                             <FaStar className="ratingIcon" />

@@ -37,7 +37,6 @@
 
     .jobDetails img {
         width: 30%;
-        height: auto;
     }
 
     .similarJobs {
@@ -60,7 +59,7 @@
     }
 
     .similarjobsLink {
-        width: 70% !important;
+        width: 100% !important;
     }
 
 }
