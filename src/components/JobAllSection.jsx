@@ -33,8 +33,8 @@ const JobAllSection = ({ jobsItem }) => {
 
           <hr />
 
-          <h5>Description</h5>
-          <p>{jobsItem.job_description}</p>
+          <h5 className='fw-bold'>Description</h5>
+          <p className="jobDec">{jobsItem.job_description}</p>
 
         </li>
       </NavLink>

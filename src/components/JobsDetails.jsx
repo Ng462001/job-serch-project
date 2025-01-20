@@ -116,7 +116,7 @@ const JobsDetails = () => {
                         </div>
                         <hr />
                         <h5 className='fw-bold'>Description</h5>
-                        <p>{jobsItem.job_description}</p>
+                        <p className='jobDec'>{jobsItem.job_description}</p>
                       </div>
                     </NavLink>
                   ))}
