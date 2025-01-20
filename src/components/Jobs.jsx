@@ -13,6 +13,7 @@ const Jobs = () => {
     serachIn: ""
   })
   const [loading, setLoading] = useState(false)
+  const [emaptyData, setEmptyData] = useState(0)
 
   useEffect(() => {
 
@@ -36,6 +37,7 @@ const Jobs = () => {
         const response = await fetch(api, options);
         const data = await response.json();
         if (response.ok === true) {
+          setEmptyData(data.jobs.length);
           setLoading(false);
           setValues({ ...allValues, jobsArr: data.jobs });
         }
@@ -45,7 +47,7 @@ const Jobs = () => {
     }
     fetchJobs();
 
-  }, [allValues.serachIn, allValues.empType, allValues.minPackage]);
+  }, [allValues.serachIn, allValues.empType, allValues.minPackage, emaptyData]);
 
   const getUserIn = (e) => {
 
@@ -57,6 +59,19 @@ const Jobs = () => {
     }
   }
 
+  const handleChangeEmpType = (e) => {
+    const { value, checked } = e.target
+    if (checked) {
+      setValues({ ...allValues, empType: [...allValues.empType, value] })
+    } else {
+      setValues({ ...allValues, empType: allValues.empType.filter(eachType => eachType !== value) })
+    }
+  }
+
+  const handleChangeSalary = (e) => {
+    setValues({ ...allValues, minPackage: e.target.value });
+  }
+
   return (
     <>
       <Navbar />
@@ -64,7 +79,7 @@ const Jobs = () => {
       <div className="container mt-3">
         <div className="row">
           <div className="col-12 col-lg-4 col-md-5 p-3">
-            <JobSideBar changeEmpType={setValues} values={allValues} />
+            <JobSideBar changeEmpType={handleChangeEmpType} changeSalary={handleChangeSalary} />
           </div>
           <div className="col-12 col-lg-8 col-md-7 p-3">
             <input onKeyUp={getUserIn} type="search" className='form-control w-100 mb-3' placeholder='Please enter you job' />
@@ -73,7 +88,13 @@ const Jobs = () => {
                 <div className='loader'></div>
               </div>
               :
-              allValues.jobsArr.map(eachJob => <JobAllSection key={eachJob.id} jobsItem={eachJob} />)
+              emaptyData === 0 ?
+                <div className='d-flex flex-column justify-content-center align-items-center h-75'>
+                  <img src="/images/no-jobs-found.png" alt="images" className='w-50' />
+                  <h2 className='text-primary fw-bold'>No Jobs Found</h2>
+                </div>
+                :
+                allValues.jobsArr.map(eachJob => <JobAllSection key={eachJob.id} jobsItem={eachJob} />)
             }
           </div>
         </div>

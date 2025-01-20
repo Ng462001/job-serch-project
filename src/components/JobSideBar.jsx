@@ -2,9 +2,7 @@ import React, { useEffect, useState } from 'react'
 import '../css/jobSideBar.css'
 import Cookies from 'js-cookie'
 
-let arr = []
-
-const JobSideBar = ({ changeEmpType, values }) => {
+const JobSideBar = ({ changeEmpType, changeSalary }) => {
 
   const [data, setData] = useState("")
   const [loading, setLoading] = useState(false)
@@ -81,25 +79,31 @@ const JobSideBar = ({ changeEmpType, values }) => {
     },
   ]
 
-  const handleOnChange = (e) => {
-    if (e.target.checked === true) {
-      arr.push(e.target.value);
-      changeEmpType({ ...values, empType: arr.toString() });
-    } else {
-      arr.splice(arr.indexOf(e.target.value), 1);
-      changeEmpType({ ...values, empType: arr.toString() });
-    }
+  const renderSalaryRangesTypes = () => (
+    <>
+      <h2 className="filter-heading mt-4 mb-4 fw-bold">Salary Range</h2>
+      <ul className="filters-list">{renderSalaryRangesList()}</ul>
+    </>
+  )
+
+  const renderEmploymentTypes = () => (
+    <>
+      <h2 className="filter-heading mt-4 mb-4 fw-bold">Type of Employment</h2>
+      <ul className="filters-list">{renderEmploymentTypesList()}</ul>
+    </>
+  )
+
+  const handleOnChangeEmpType = (e) => {
+    changeEmpType(e);
   }
 
   const handleOnSalaryChange = (e) => {
-    changeEmpType({ ...values, minPackage: e.target.value });
+    changeSalary(e)
   }
 
   const renderSalaryRangesList = () => {
 
     return salaryRangesList.map(eachRange => {
-
-
       return (
         <li className="fliters-list-item" key={eachRange.salaryRangeId}>
           <input
@@ -118,20 +122,6 @@ const JobSideBar = ({ changeEmpType, values }) => {
     })
   }
 
-  const renderSalaryRangesTypes = () => (
-    <>
-      <h2 className="filter-heading mt-4 mb-4 fw-bold">Salary Range</h2>
-      <ul className="filters-list">{renderSalaryRangesList()}</ul>
-    </>
-  )
-
-  const renderEmploymentTypes = () => (
-    <>
-      <h2 className="filter-heading mt-4 mb-4 fw-bold">Type of Employment</h2>
-      <ul className="filters-list">{renderEmploymentTypesList()}</ul>
-    </>
-  )
-
   const renderEmploymentTypesList = () => {
 
 
@@ -144,7 +134,7 @@ const JobSideBar = ({ changeEmpType, values }) => {
             className="form-check-input mb-3 mr-3"
             value={eachType.employmentTypeId}
             id={eachType.employmentTypeId}
-            onChange={handleOnChange}
+            onChange={handleOnChangeEmpType}
           />
           <label htmlFor={eachType.employmentTypeId} className="filter-label">
             {eachType.label}
@@ -177,9 +167,9 @@ const JobSideBar = ({ changeEmpType, values }) => {
   return (
     <>
       {profileDetails()}
-      <hr className='mt-5'/>
+      <hr className='mt-5' />
       {renderEmploymentTypes()}
-      <hr className='mt-4'/>
+      <hr className='mt-4' />
       {renderSalaryRangesTypes()}
     </>
   )
