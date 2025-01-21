@@ -39,8 +39,8 @@ const Jobs = () => {
         const data = await response.json();
         if (response.ok === true) {
           setEmptyData(data.jobs.length);
-          setLoading(false);
           setValues({ ...allValues, jobsArr: data.jobs });
+          setLoading(false);
         }
       } catch (error) {
         console.log(error);
@@ -48,7 +48,7 @@ const Jobs = () => {
     }
     fetchJobs();
 
-  }, [allValues.serachIn, allValues.empType, allValues.minPackage, emaptyData]);
+  }, [allValues.serachIn, allValues.empType, allValues.minPackage]);
 
   const getUserIn = (e) => {
 
@@ -105,3 +105,4 @@ const Jobs = () => {
 }
 
 export default Jobs
+
