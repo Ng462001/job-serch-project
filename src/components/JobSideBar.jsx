@@ -94,7 +94,7 @@ const JobSideBar = ({ changeEmpType, changeSalary }) => {
   )
 
   const handleOnChangeEmpType = (e) => {
-    changeEmpType(e);
+    changeEmpType(e)
   }
 
   const handleOnSalaryChange = (e) => {

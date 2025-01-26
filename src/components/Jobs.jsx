@@ -11,7 +11,7 @@ const Jobs = () => {
     jobsArr: [],
     empType: [],
     minPackage: "",
-    serachIn: ""
+    searchIn: ""
   })
   const [loading, setLoading] = useState(false)
   const [emaptyData, setEmptyData] = useState(0)
@@ -22,9 +22,9 @@ const Jobs = () => {
 
     const fetchJobs = async () => {
 
-      const { empType, minPackage, serachIn } = allValues;
+      const { empType, minPackage, searchIn } = allValues;
 
-      const api = `https://apis.ccbp.in/jobs?employment_type=${empType}&minimum_package=${minPackage}&search=${serachIn}`;
+      const api = `https://apis.ccbp.in/jobs?employment_type=${empType}&minimum_package=${minPackage}&search=${searchIn}`;
 
       const options = {
         method: "Get",
@@ -48,15 +48,15 @@ const Jobs = () => {
     }
     fetchJobs();
 
-  }, [allValues.serachIn, allValues.empType, allValues.minPackage]);
+  }, [allValues.searchIn, allValues.empType, allValues.minPackage]);
 
   const getUserIn = (e) => {
 
     if (e.key === "Enter") {
-      setValues({ ...allValues, serachIn: e.target.value });
+      setValues({ ...allValues, searchIn: e.target.value });
     }
     if (e.target.value === "") {
-      setValues({ ...allValues, serachIn: "" });
+      setValues({ ...allValues, searchIn: "" });
     }
   }
 
