@@ -63,11 +63,11 @@ const Login = () => {
             <h1 className='text-center fw-bold mb-3'>Login</h1>
             <form className='form' onSubmit={handleSumbitUserLogin}>
               <div className='form-group mb-3'>
-                <i className="fa-solid fa-user"></i><label htmlFor="username" className='fw-bold'>Username</label>
+                <i className="fa-solid fa-user"></i><label htmlFor="username" className='fw-bold'>Username (rahul)</label>
                 <input className='form-control' type="text" id='username' placeholder="Enter Username" onChange={(e) => setValues({ ...allValues, username: e.target.value })} />
               </div>
               <div className='form-group mb-3'>
-                <i className="fa-solid fa-lock"></i><label htmlFor="password" className='fw-bold'> Password</label>
+                <i className="fa-solid fa-lock"></i><label htmlFor="password" className='fw-bold'> Password (rahul@2021)</label>
                 <input className='form-control' type="password" id='password' placeholder="Enter Password" onChange={(e) => setValues({ ...allValues, password: e.target.value })} />
               </div>
               <button type='submit' className="btn-login">Login</button>
