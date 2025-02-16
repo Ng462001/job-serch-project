@@ -5,8 +5,8 @@
 }
 
 .hero__caption h1 {
-    font-family: "Muli", sans-serif;
-    font-size: 80px;
+    font-family: "Arial", sans-serif;
+    font-size: 68px;
     font-weight: 900;
     letter-spacing: 3px;
     color: #28395a;
@@ -24,5 +24,73 @@
     .find-job {
         text-align: center;
         margin-top: 10px;
+    }
+}
+
+.masked-text {
+    font-size: 8rem;
+    font-weight: bold;
+    color: transparent;
+    background: radial-gradient(
+        circle farthest-side at 0% 50%,
+        #282828 23.5%,
+        rgba(255, 170, 0, 0) 0
+      )
+      21px 30px,
+    radial-gradient(
+        circle farthest-side at 0% 50%,
+        #a1000e 24%,
+        rgba(240, 166, 17, 0) 0
+      )
+      19px 30px,
+    linear-gradient(
+        #282828 14%,
+        rgba(240, 166, 17, 0) 0,
+        rgba(240, 166, 17, 0) 85%,
+        #282828 0
+      )
+      0 0,
+    linear-gradient(
+        150deg,
+        #282828 24%,
+        #a1000e 0,
+        #a1000e 26%,
+        rgba(240, 166, 17, 0) 0,
+        rgba(240, 166, 17, 0) 74%,
+        #a1000e 0,
+        #a1000e 76%,
+        #282828 0
+      )
+      0 0,
+    linear-gradient(
+        30deg,
+        #282828 24%,
+        #a1000e 0,
+        #a1000e 26%,
+        rgba(240, 166, 17, 0) 0,
+        rgba(240, 166, 17, 0) 74%,
+        #a1000e 0,
+        #a1000e 76%,
+        #282828 0
+      )
+      0 0,
+    linear-gradient(90deg, #a1000e 2%, #282828 0, #282828 98%, #a1000e 0%) 0 0
+      #282828;
+    background-size: 200%;
+    /* Enlarged for smooth animation */
+    background-position: 0 50%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate-background 5s infinite alternate linear;
+}
+
+@keyframes animate-background {
+    0% {
+        background-position: 0 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
     }
 }

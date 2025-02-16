@@ -1,6 +1,7 @@
 import Navbar from "./Navbar"
 import '../css/home.css'
 import { NavLink } from "react-router-dom"
+import JobsBtn from "../AnimatedComponents/JobsBtn"
 
 const Home = () => {
   return (
@@ -13,14 +14,16 @@ const Home = () => {
               <div className="row">
                 <div className="col-xl-6 col-lg-9 col-md-10">
                   <div className="hero__caption">
-                    <h1 className="">Find the most exciting startup jobs</h1>
+                    <div class="masking-container">
+                      <h1 class="masked-text">Find the most exciting startup jobs</h1>
+                    </div>
                   </div>
                 </div>
               </div>
               <div className="row">
                 <div className="col-xl-8">
                   <div className="find-job">
-                    <NavLink to="/jobs" className="btn btn-primary mt-2" style={{width:"100px"}}> Find Jobs</NavLink>
+                    <JobsBtn/>
                   </div>
                 </div>
               </div>
