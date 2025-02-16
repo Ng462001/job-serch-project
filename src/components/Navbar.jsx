@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import Cookies from 'js-cookie'
 import '../css/navbar.css'
-import Button from '../animatedComponents/Button'
+import Button from '../AnimatedComponents/Button'
 
 const Navbar = () => {
     const navigate = useNavigate();
