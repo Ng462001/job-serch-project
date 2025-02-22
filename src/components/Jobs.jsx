@@ -83,7 +83,7 @@ const Jobs = () => {
             <JobSideBar changeEmpType={handleChangeEmpType} changeSalary={handleChangeSalary} />
           </div>
           <div className="col-12 col-lg-8 col-md-7 p-3">
-            <input onKeyUp={getUserIn} type="search" className='form-control w-100 mb-3' placeholder='Please enter you job' />
+            <input onKeyUp={getUserIn} type="search" className='form-control w-100 mb-3' id="search" placeholder='Please enter you job' />
             {loading ?
               <div className='d-flex justify-content-center align-items-center h-75'>
                 <div className='loader'></div>

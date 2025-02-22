@@ -82,14 +82,51 @@ const JobSideBar = ({ changeEmpType, changeSalary }) => {
   const renderSalaryRangesTypes = () => (
     <>
       <h2 className="filter-heading mt-4 mb-4 fw-bold">Salary Range</h2>
-      <ul className="filters-list">{renderSalaryRangesList()}</ul>
+      <ul className="filters-list">
+        {
+          salaryRangesList.map(eachRange => (
+            <li className="fliters-list-item" key={eachRange.salaryRangeId}>
+              <input
+                type="radio"
+                className="form-check-input mb-3"
+                value={eachRange.salaryRangeId}
+                id={eachRange.salaryRangeId}
+                name="salary ranges"
+                onChange={handleOnSalaryChange}
+              />
+              <label htmlFor={eachRange.salaryRangeId} className="filter-label">
+                {eachRange.label}
+              </label>
+            </li>
+          ))
+        }
+      </ul>
     </>
   )
 
   const renderEmploymentTypes = () => (
     <>
       <h2 className="filter-heading mt-4 mb-4 fw-bold">Type of Employment</h2>
-      <ul className="filters-list">{renderEmploymentTypesList()}</ul>
+      <ul className="filters-list">
+        {
+          employmentTypesList.map(eachType =>
+          (
+            <li className="fliters-list-item" key={eachType.employmentTypeId}>
+              <input
+                type="checkbox"
+                className="form-check-input mb-3 mr-3"
+                value={eachType.employmentTypeId}
+                id={eachType.employmentTypeId}
+                onChange={handleOnChangeEmpType}
+              />
+              <label htmlFor={eachType.employmentTypeId} className="filter-label">
+                {eachType.label}
+              </label>
+            </li>
+          )
+          )
+        }
+      </ul>
     </>
   )
 
@@ -101,48 +138,6 @@ const JobSideBar = ({ changeEmpType, changeSalary }) => {
     changeSalary(e)
   }
 
-  const renderSalaryRangesList = () => {
-
-    return salaryRangesList.map(eachRange => {
-      return (
-        <li className="fliters-list-item" key={eachRange.salaryRangeId}>
-          <input
-            type="radio"
-            className="form-check-input mb-3"
-            value={eachRange.salaryRangeId}
-            id={eachRange.salaryRangeId}
-            name="salary ranges"
-            onChange={handleOnSalaryChange}
-          />
-          <label htmlFor={eachRange.salaryRangeId} className="filter-label">
-            {eachRange.label}
-          </label>
-        </li>
-      )
-    })
-  }
-
-  const renderEmploymentTypesList = () => {
-
-
-    return employmentTypesList.map(eachType => {
-
-      return (
-        <li className="fliters-list-item" key={eachType.employmentTypeId}>
-          <input
-            type="checkbox"
-            className="form-check-input mb-3 mr-3"
-            value={eachType.employmentTypeId}
-            id={eachType.employmentTypeId}
-            onChange={handleOnChangeEmpType}
-          />
-          <label htmlFor={eachType.employmentTypeId} className="filter-label">
-            {eachType.label}
-          </label>
-        </li>
-      )
-    })
-  }
 
   const profileDetails = () => (
     <div className="col mt-4 ">
@@ -166,11 +161,23 @@ const JobSideBar = ({ changeEmpType, changeSalary }) => {
 
   return (
     <>
-      {profileDetails()}
-      <hr className='mt-5' />
-      {renderEmploymentTypes()}
-      <hr className='mt-4' />
-      {renderSalaryRangesTypes()}
+      <div
+        className='sticky-lg-top'
+        style={{
+          top: "140px",
+          overflowY: "scroll",
+          height: "calc(100vh - 140px)"
+        }}
+      >
+        {profileDetails()}
+        <hr className='mt-5' />
+        {renderEmploymentTypes()}
+        <hr className='mt-4' />
+        {renderSalaryRangesTypes()}
+        <div>
+          
+        </div>
+      </div>
     </>
   )
 
